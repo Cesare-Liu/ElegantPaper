@@ -1,6 +1,6 @@
 %!TEX program = xelatex
 % 完整编译: xelatex -> biber/bibtex -> xelatex -> xelatex
-\documentclass[lang=cn,a4paper,newtx]{elegantpaper}
+\documentclass[lang=cn,a4paper,newtx,bibtex]{elegantpaper}
 
 \title{ElegantPaper: 一个优美的 \LaTeX{} 工作论文模板}
 \author{作者1 \\ 某某大学/机构 \and 作者2 \\ 某某大学/机构}
@@ -12,7 +12,7 @@
 % 本文档命令
 \usepackage{array}
 \newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
-\addbibresource[location=local]{reference.bib} % 参考文献，不要删除
+\addbibresource[location=local]{HE.bib, bit-wise.bib} % 参考文献，不要删除
 
 \begin{document}
 
@@ -25,7 +25,12 @@
 
 
 
+另一方面，CKKS的自举设计与BGV/BFV类型有所不同，其区别主要体现在模约化过程。
+其自举过程将模约化看作一个分段的周期函数，然后使用另一个连续性的周期函数（如正弦函数）在多个离散区间对其近似。
+由于CKKS方案仅支持加法和乘法的同态运算，所以问题转化为如何利用多项式对正弦函数进行逼近，已有的方案采用泰勒多项式\cite{HE351/CHKKS18}、切比雪夫多项式\cite{HE353}\cite{HE359/eurocrypt/LeeLLKN21}、最小二乘法\cite{HE364}、拉格朗日插值法\cite{HE363}等方法找到一个多项式函数用来逼近正弦函数。
 
+
+FHEW\cite{HE410FHEW/DucasM21}
 \printbibliography[heading=bibintoc, title=\ebibname]
 
 \appendix
